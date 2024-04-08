@@ -1,7 +1,7 @@
 return {
   -- UI
-  { 
-    "catppuccin/nvim", 
+  {
+    "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
     config = function()
@@ -73,11 +73,34 @@ return {
   "gbprod/yanky.nvim",
   'airblade/vim-gitgutter',
   'f-person/git-blame.nvim',
-  -- END UI
+
+  -- LSP
 
 	{
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-  }
-}
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
+  },
 
+  'williamboman/mason.nvim',
+  'williamboman/mason-lspconfig.nvim',
+  'neovim/nvim-lspconfig',
+
+	{
+		'folke/trouble.nvim',
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
+  },
+
+
+	{
+		'hrsh7th/nvim-cmp',
+		dependencies = {
+			'hrsh7th/cmp-nvim-lsp',
+			'hrsh7th/cmp-vsnip',
+			'hrsh7th/vim-vsnip',
+			'L3M0N4D3/LuaSnip',
+		},
+		config = function()
+			require 'plugins.configs.cmp'
+		end,
+	},
+}
