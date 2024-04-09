@@ -5,15 +5,9 @@ require('mason').setup()
 require('mason-lspconfig').setup({
   ensure_installed = {
 		'lua_ls',
-    'lua-language-server',
-    'stylua',
-    'html-lsp',
-    'css-lsp',
     'gopls',
     'templ',
-    'typescript-language-server',
-    'tailwindcss-language-server',
-    'eslint-lsp',
+		'tsserver',
   },
 })
 
@@ -35,10 +29,6 @@ lsp.gopls.setup({
 lsp.templ.setup({
   cmd = { 'templ', 'lsp', '-http=localhost:7474' },
   filetypes = { 'templ' },
-})
-
-lsp.tailwindcss.setup({
-  filetypes = { '*' },
 })
 
 lsp.lua_ls.setup({

@@ -75,29 +75,36 @@ return {
   'f-person/git-blame.nvim',
 
   -- LSP
-
 	{
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
   },
 
-  'williamboman/mason.nvim',
+	{ 
+		'williamboman/mason.nvim',
+		ensure_installd = {
+			'goimports-reviser',
+		}
+	},
   'williamboman/mason-lspconfig.nvim',
   'neovim/nvim-lspconfig',
-
+  {
+    'elentok/format-on-save.nvim',
+    config = function()
+      require 'plugins.configs.formatter'
+    end,
+  },
 	{
 		'folke/trouble.nvim',
 		dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
-
-
 	{
 		'hrsh7th/nvim-cmp',
 		dependencies = {
 			'hrsh7th/cmp-nvim-lsp',
 			'hrsh7th/cmp-vsnip',
 			'hrsh7th/vim-vsnip',
-			'L3M0N4D3/LuaSnip',
+			'L3MON4D3/LuaSnip',
 		},
 		config = function()
 			require 'plugins.configs.cmp'
