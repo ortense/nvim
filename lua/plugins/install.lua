@@ -70,6 +70,23 @@ return {
       'nvim-lua/plenary.nvim'
     },
   },
+	{
+		"kdheepak/lazygit.nvim",
+    cmd = {
+    	"LazyGit",
+    	"LazyGitConfig",
+     	"LazyGitCurrentFile",
+    	"LazyGitFilter",
+    	"LazyGitFilterCurrentFile",
+    },
+		dependencies = {
+    	"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+    },
+		config = function ()
+			require('telescope').load_extension("lazygit")
+		end
+	},
   "gbprod/yanky.nvim",
   'airblade/vim-gitgutter',
   'f-person/git-blame.nvim',

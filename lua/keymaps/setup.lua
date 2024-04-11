@@ -30,3 +30,6 @@ Map("n", "<leader>w", ":bdelete <enter>", { desc = 'close active buffer' })  -- 
 Map('n', '<leader>p', '<cmd>Telescope find_files<cr>', { desc = 'find files' })
 Map('n', '<leader>f', [[<cmd>lua require('telescope.builtin').live_grep({ prompt_title = "Search in Buffers", only_sort_text = true })<CR>]], { desc = 'find files' })
 Map('n', '<leader>F', '<cmd>Telescope live_grep<cr>', { desc = 'find with live grep' })
+
+-- lazygit
+Map({ 'n', 'v' }, '<leader>g', '<cmd>LazyGit<cr>', { desc = 'open git ui'})
