@@ -33,3 +33,6 @@ Map('n', '<leader>F', '<cmd>Telescope live_grep<cr>', { desc = 'find with live g
 
 -- lazygit
 Map({ 'n', 'v' }, '<leader>g', '<cmd>LazyGit<cr>', { desc = 'open git ui'})
+
+-- dashboard
+Map({ 'n', 'v' }, '<leader>d', '<cmd>Dashboard<cr>', { desc = 'show dashboard' })

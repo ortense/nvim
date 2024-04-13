@@ -8,6 +8,15 @@ return {
       require 'plugins.configs.catppuccin'
     end,
   },
+	{
+		'nvimdev/dashboard-nvim',
+		event = 'VimEnter',
+		config = function()
+      local options = require 'plugins.configs.dashboard'
+			require('dashboard').setup(options)
+		end,
+		dependencies = { { 'nvim-tree/nvim-web-devicons' } },
+	},
   {
     "folke/noice.nvim",
     event = "VeryLazy",
@@ -96,8 +105,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
   },
-
-	{ 
+	{
 		'williamboman/mason.nvim',
 		ensure_installd = {
 			'goimports-reviser',
