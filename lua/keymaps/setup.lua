@@ -15,11 +15,6 @@ Map("n", "<leader>q", ":q!<enter>", { desc = 'quit' }) -- <space>+q : quit witho
 Map("n", "<leader>s", ":w<enter>", { desc = 'save' })  -- <space>+s : save file
 Map("n", "<leader>S", ":wq<enter>", { desc = 'save and quit' }) -- <space>+Q : save and quit
 
-
--- copy & past
-vim.api.nvim_set_keymap('v', '<leader>c', '"+y', { noremap = true, silent = true }) -- <space>+c : copy in visual mode
-vim.api.nvim_set_keymap('n', '<leader>v', '"+p', { noremap = true, silent = true }) -- <space>+v : paste in normal mode
-
 -- <space>+t : toggle floating terminal
 Map('n', '<leader>t', '<CMD>lua require("FTerm").toggle()<CR>', { desc = 'toggle floating terminal' })
 Map('t', '<leader>t', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', { desc = 'toggle floating terminal' })
@@ -32,6 +27,12 @@ Map("n", "<leader>]", ":bnext <enter>", { desc = 'move to next buffer' })    -- 
 Map("n", "<leader>w", ":bdelete <enter>", { desc = 'close active buffer' })  -- <space>+w : close buffer
 
 -- telescope
--- local telescope = require('telescope.builtin')
-Map('n', '<leader>f', '<cmd>Telescope find_files<cr>', { desc = 'find files' })
-Map('n', '<leader>F', '<cmd>Telescope live_grep<cr>', { desc = 'find  with live grep' })
+Map('n', '<leader>p', '<cmd>Telescope find_files<cr>', { desc = 'find files' })
+Map('n', '<leader>f', [[<cmd>lua require('telescope.builtin').live_grep({ prompt_title = "Search in Buffers", only_sort_text = true })<CR>]], { desc = 'find files' })
+Map('n', '<leader>F', '<cmd>Telescope live_grep<cr>', { desc = 'find with live grep' })
+
+-- lazygit
+Map({ 'n', 'v' }, '<leader>g', '<cmd>LazyGit<cr>', { desc = 'open git ui'})
+
+-- dashboard
+Map({ 'n', 'v' }, '<leader>d', '<cmd>Dashboard<cr>', { desc = 'show dashboard' })

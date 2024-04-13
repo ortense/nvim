@@ -1,13 +1,22 @@
 return {
   -- UI
-  { 
-    "catppuccin/nvim", 
+  {
+    "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
     config = function()
       require 'plugins.configs.catppuccin'
     end,
   },
+	{
+		'nvimdev/dashboard-nvim',
+		event = 'VimEnter',
+		config = function()
+      local options = require 'plugins.configs.dashboard'
+			require('dashboard').setup(options)
+		end,
+		dependencies = { { 'nvim-tree/nvim-web-devicons' } },
+	},
   {
     "folke/noice.nvim",
     event = "VeryLazy",
@@ -70,14 +79,60 @@ return {
       'nvim-lua/plenary.nvim'
     },
   },
+	{
+		"kdheepak/lazygit.nvim",
+    cmd = {
+    	"LazyGit",
+    	"LazyGitConfig",
+     	"LazyGitCurrentFile",
+    	"LazyGitFilter",
+    	"LazyGitFilterCurrentFile",
+    },
+		dependencies = {
+    	"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+    },
+		config = function ()
+			require('telescope').load_extension("lazygit")
+		end
+	},
   "gbprod/yanky.nvim",
   'airblade/vim-gitgutter',
   'f-person/git-blame.nvim',
-  -- END UI
 
+  -- LSP
 	{
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-  }
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
+  },
+	{
+		'williamboman/mason.nvim',
+		ensure_installd = {
+			'goimports-reviser',
+		}
+	},
+  'williamboman/mason-lspconfig.nvim',
+  'neovim/nvim-lspconfig',
+  {
+    'elentok/format-on-save.nvim',
+    config = function()
+      require 'plugins.configs.formatter'
+    end,
+  },
+	{
+		'folke/trouble.nvim',
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
+  },
+	{
+		'hrsh7th/nvim-cmp',
+		dependencies = {
+			'hrsh7th/cmp-nvim-lsp',
+			'hrsh7th/cmp-vsnip',
+			'hrsh7th/vim-vsnip',
+			'L3MON4D3/LuaSnip',
+		},
+		config = function()
+			require 'plugins.configs.cmp'
+		end,
+	},
 }
-
