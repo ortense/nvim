@@ -1,17 +1,23 @@
+local theme = 'auto'
+
+if (Config.ui.theme == nil or Config.ui.theme == 'default') then
+  theme = 'ayu_dark'
+end
+
 return {
   'nvim-lualine/lualine.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()
     require('lualine').setup({
       options = {
-        theme = Config.ui.theme,
+        theme = theme,
         icons_enable = true,
+        component_separators = { left = '', right = '' },
       },
       sections = {
         -- left
         lualine_a = { 'mode' },
         lualine_b = {
-          'branch',
           {
             'filename',
             file_status = true,
@@ -19,13 +25,14 @@ return {
             path = 1,
             shorting_target = 40,
           },
-          'diff',
         },
-        lualine_c = {},
+        lualine_c = { 'diff' },
         -- right
-        lualine_x = {},
-        lualine_y = { 'diagnostics', 'progress' },
-        lualine_z = { 'location' },
+        lualine_x = { 'diagnostics' },
+        lualine_y = { 'location', 'progress' },
+        lualine_z = {
+          { 'branch', icon = '' },
+        },
       },
     })
   end,

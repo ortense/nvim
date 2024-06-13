@@ -1,4 +1,3 @@
-
 return {
   'folke/noice.nvim',
   event = 'VeryLazy',
@@ -21,7 +20,28 @@ return {
         bottom_search = false,
         long_message_to_split = true,
         inc_rename = false,
-        lsp_doc_border = true,
+      },
+      views = {
+        cmdline_popup = {
+          border = {
+            style = Config.ui.border,
+          }
+        },
+        hover = {
+          border = {
+            style = Config.ui.border,
+          },
+        },
+        popup = {
+          border = {
+            style = Config.ui.border,
+          },
+        },
+        confirm = {
+          border = {
+            style = Config.ui.border,
+          },
+        },
       },
     })
   end,

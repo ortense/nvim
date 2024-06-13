@@ -1,4 +1,4 @@
 require 'config'
-require 'custom-functions'
+require 'commands'
 require 'vim-options'
 require 'lazy-nvim'
