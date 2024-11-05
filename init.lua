@@ -1,3 +1,4 @@
+require 'utils'
 require 'config'
 require 'commands'
 require 'vim-options'

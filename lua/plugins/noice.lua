@@ -1,4 +1,4 @@
-return {
+local mod = {
   'folke/noice.nvim',
   event = 'VeryLazy',
   opts = {},
@@ -46,3 +46,5 @@ return {
     })
   end,
 }
+
+return {}

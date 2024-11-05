@@ -20,20 +20,19 @@ return {
     'neovim/nvim-lspconfig',
     config = function()
       local lspconfig = require('lspconfig')
-      for _, server in pairs(Config.lsp) do
-        lspconfig[server].setup({})
+
+      for server, config in pairs(Config.lsp) do
+        if type(server) == "number" then
+          server = config
+          config = {}
+        end
+
+        lspconfig[server].setup(config)
       end
 
-      local signs = {
-        Error = ' ',
-        Warn = ' ',
-        Hint = ' 󰌶',
-        Information = ' 󰙎',
-      }
-
-      for type, icon in pairs(signs) do
+      for type, icon in pairs(Config.signs) do
         local hl = 'DiagnosticSign' .. type
-        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+        vim.fn.sign_define(hl, { text = " " .. icon, texthl = hl, numhl = hl })
       end
 
       vim.opt.signcolumn = 'yes'

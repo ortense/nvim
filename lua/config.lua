@@ -1,15 +1,14 @@
 Config = {
   ui = {
-    -- default, catppuccin-mocha, catppuccin-macchiato, catppuccin-frappe, catppuccin-latte, dracula, dracula-soft, nord
-    theme = 'tokyonight-storm',
-    border = 'rounded', -- single, rounded, double
+    --themes: default, catppuccin-mocha, catppuccin-macchiato, catppuccin-frappe, catppuccin-latte, dracula, dracula-soft, nord
+    theme = "catppuccin-mocha",
+    border = "rounded", -- single, rounded, double
     indentRainbow = false,
     transparence = false,
     currentLineBlame = true,
   },
   keybind = {
     mode = { 'n', 'v' },
-    -- { '<F5>', vai, desc = 'vai!' },
     { "<leader>?", "<cmd>WhichKey<cr>", desc = "󰓎 Show all commands" },
     { "<leader>/", "<cmd>nohlsearch<cr>", desc = "󰃢 Clear search selection" },
     { "<leader>a", vim.lsp.buf.code_action, desc = " Code Actions" },
@@ -19,6 +18,7 @@ Config = {
     { "<leader>y", '"+y', desc = " Yank to system clipbboard" },
     { "<leader>p", '"+p', desc = " Paste from system clipbboard" },
     { "<leader>r", vim.lsp.buf.rename, desc = "󰤀 Rename symbol" },
+    { "<leader>s", ":w<cr>", desc = " Save" },
     { "J", ":m .+1<CR>==", desc = " Move line down", remap = false },
     { "K", ":m .-2<CR>==", desc = " Move line up", remap = false },
     { "H", "^", desc = " Goto first non-blank in line", remap = false },
@@ -56,10 +56,10 @@ Config = {
     { "<leader>Dq", "<cmd>Trouble qflist toggle<cr>", desc = "󰁨 Quickfix List" },
     { "<leader>f", group = " Find" },
     { "<leader>fb", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "󰩊 In Buffer" },
-    { "<leader>fc", "<cmd>Telescope command_history<cr>", desc = " Command History" },
+    { "<leader>fc", ':lua require"telescope.builtin".find_files({ hidden = true })<CR>', desc = " Command History" },
     { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "󰱽 Files" },
-    { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = " Global" },
-    { "<leader>fh", "<cmd>Telescope find_files hidden=true<cr>", desc = "󰘓 Hidden Files" },
+    { "<leader>fg", ':lua require"telescope.builtin".live_grep({ hidden = true })<cr>', desc = " Global" },
+    { "<leader>fh", ':lua require"telescope.builtin".find_files({ hidden = true })<CR>', desc = "󰘓 Hidden Files" },
     { "<leader>fm", "<cmd>Telescope marks<cr>", desc = "󰟙 Marks" },
     { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = " Recent Files" },
     { "<leader>ft", "<cmd>Telescope help_tags<cr>", desc = " Tags" },
@@ -106,6 +106,12 @@ Config = {
     { "Qf", ":q!<cr>", desc = " Quit without saving" },
     { "Qw", ":wq<cr>", desc = " Write and Quit" },
   },
+  signs = {
+    Error = '',
+    Warn = '󰔶',
+    Hint = '󰝤',
+    Information = '',
+  },
   languages = {
     'vim',
     'lua',
@@ -126,12 +132,18 @@ Config = {
     'lua_ls',
     'gopls',
     'templ',
-    'tsserver',
     'astro',
     'pyright',
     'intelephense',
     'jsonls',
     'jqls',
     'biome',
+    ts_ls = {
+      root_dir = Utils.root_pattern("package.json"),
+      single_file_support = false,
+    },
+    denols = {
+      root_dir = Utils.root_pattern("deno.json", "deno.jsonc"),
+    },
   },
 }

@@ -12,7 +12,8 @@ return {
       options = {
         theme = theme,
         icons_enable = true,
-        component_separators = { left = '', right = '' },
+        component_separators = { left = "", right = "" },
+        section_separators = { left = "", right = "" },
       },
       sections = {
         -- left
@@ -28,7 +29,17 @@ return {
         },
         lualine_c = { 'diff' },
         -- right
-        lualine_x = { 'diagnostics' },
+        lualine_x = {
+          {
+            'diagnostics',
+            symbols = {
+              error = Config.signs.Error .. " ",
+              warn = Config.signs.Warn .. " ",
+              info = Config.signs.Information .. " ",
+              hint = Config.signs.Hint .. " ",
+            }
+          }
+        },
         lualine_y = { 'location', 'progress' },
         lualine_z = {
           { 'branch', icon = '' },
