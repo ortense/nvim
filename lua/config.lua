@@ -1,7 +1,7 @@
 Config = {
   ui = {
     --themes: default, catppuccin-mocha, catppuccin-macchiato, catppuccin-frappe, catppuccin-latte, dracula, dracula-soft, nord
-    theme = "catppuccin-mocha",
+    theme = "rose-pine-moon",
     border = "rounded", -- single, rounded, double
     indentRainbow = false,
     transparence = false,
@@ -70,16 +70,18 @@ Config = {
     { "gh", "^", desc = " First non-blank in line", remap = false },
     { "gl", "g_", desc = " Line end", remap = false },
     { "<leader>gc", "<cmd>HopChar1<cr>", desc = "󰾹 Char" },
+    { "gd", "<cmd>Telescope lsp_definitions<cr>", desc = " Go to Definition" },
     { "<leader>gd", "<cmd>Telescope lsp_definitions<cr>", desc = " Definition" },
-    { "gd", "<cmd>Telescope lsp_definitions<cr>", desc = " Definition" },
     { "<leader>ge", "G", desc = " End of file", remap = false },
     { "<leader>gi", "<cmd>Telescope lsp_implementations<cr>", desc = "󰠲 Implementation" },
-    { "gI", "<cmd>Telescope lsp_implementations<cr>", desc = "󰠲 Implementation" },
+    { "gI", "<cmd>Telescope lsp_implementations<cr>", desc = "󰠲 Go to Implementation" },
     { "<leader>gl", "<cmd>HopLine<cr>", desc = " Line" },
     { "<leader>gn", "<cmd>HopNode<cr>", desc = "󰉶 Node" },
+    { "gr", "<cmd>Telescope lsp_references<cr>", desc = " Go to References" },
     { "<leader>gr", "<cmd>Telescope lsp_references<cr>", desc = " References" },
     { "<leader>gt", "gg", desc = " Top of file", remap = false },
     { "<leader>gw", "<cmd>HopWord<cr>", desc = " Word" },
+    { "gw", "<cmd>HopWord<cr>", desc = " Go to Word" },
     { "<leader>m", group = "󰫙 Match" },
     { "<leader>mW", "viW", desc = " whole word" },
     { "<leader>mp", "vip", desc = " paragraph" },
@@ -127,6 +129,7 @@ Config = {
     'yaml',
     'toml',
     'markdown',
+    'kdl',
   },
   lsp = {
     'lua_ls',
