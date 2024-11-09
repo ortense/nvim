@@ -1,21 +1,21 @@
 return {
   {
-    'lewis6991/gitsigns.nvim',
+    "lewis6991/gitsigns.nvim",
     config = function()
-      require('gitsigns').setup({
+      require("gitsigns").setup({
         current_line_blame = Config.ui.currentLineBlame,
       })
     end
   },
   {
-    'NeogitOrg/neogit',
+    "NeogitOrg/neogit",
     dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope.nvim',
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
     },
     opts = {},
-    config = function ()
-      require('neogit').setup({
+    config = function()
+      require("neogit").setup({
         integrations = {
           telescope = true,
           diffview = true,
@@ -23,5 +23,15 @@ return {
       })
     end,
   },
-  'sindrets/diffview.nvim',
+  "sindrets/diffview.nvim",
+  {
+    "ruifm/gitlinker.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("gitlinker").setup({
+        mapping = nil,
+
+      })
+    end
+  }
 }

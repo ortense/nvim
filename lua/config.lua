@@ -35,6 +35,7 @@ Config = {
     { "<leader>Gp", "<cmd>Gitsigns preview_hunk_inline<cr>", desc = "󰆿 Preview Hunk Inline" },
     { "<leader>Gr", "<cmd>Gitsigns reset_hunk<cr>", desc = " Reset Hunk" },
     { "<leader>Gs", "<cmd>Telescope git_status<cr>", desc = "󱖫 Status" },
+    { "<leader>Gu", ":lua require('gitlinker').get_buf_range_url('n',{})<cr>", desc = " Copy remote URL" },
     { "<leader>b", group = " Buffers" },
     { "<leader>bb", "<cmd>Telescope buffers<cr>", desc = " List Buffers" },
     { "<leader>bc", "<cmd>bd<cr>", desc = " Close Buffer" },
