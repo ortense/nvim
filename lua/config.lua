@@ -89,7 +89,6 @@ Config = {
     { "<leader>ms", "^vg_", desc = " sentense" },
     { "<leader>mt", "vat", desc = "󰅴 tag" },
     { "<leader>mw", "viw", desc = "󰾹 word" },
-    -- { "<leader>ss", "/", desc = " Local Search", remap = false, silent = false },
     { "<leader>w", group = " Window" },
     { "<leader>wc", "<cmd>close<cr>", desc = "󰅚 Close Window" },
     { "<leader>we", "<cmd>wincmd =<cr>", desc = "󰝘 Equalize Window Sizes" },
