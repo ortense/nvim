@@ -9,6 +9,9 @@ return {
 
       telescope.setup({
         defaults = {
+          layout_config = {
+            vertical = { width = 0.8 },
+          },
           mappings = {
             i = { ["<c-t>"] = open_with_trouble },
             n = { ["<c-t>"] = open_with_trouble },
