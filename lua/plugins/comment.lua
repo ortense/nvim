@@ -1,4 +1,8 @@
 return {
-  'numToStr/Comment.nvim',
-  opts = {},
+  { "numToStr/Comment.nvim" },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
+  },
 }
