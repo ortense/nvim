@@ -140,7 +140,9 @@ Config = {
     'intelephense',
     'jsonls',
     'jqls',
-    'biome',
+    biome = {
+      root_dir = Utils.root_pattern("biome.json", "biome.jsonc"),
+    },
     ts_ls = {
       root_dir = Utils.root_pattern("package.json"),
       single_file_support = false,
