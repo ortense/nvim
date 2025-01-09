@@ -36,6 +36,10 @@ return {
       end
 
       vim.opt.signcolumn = 'yes'
+
+      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+        border = Config.ui.border,
+      })
     end
   }
 }
