@@ -3,9 +3,8 @@ Config = {
     --themes: default, catppuccin-mocha, catppuccin-macchiato, catppuccin-frappe, catppuccin-latte, dracula, dracula-soft, nord
     theme = "rose-pine-moon",
     border = "rounded", -- single, rounded, double
-    indentRainbow = false,
-    transparence = false,
     currentLineBlame = true,
+    showBufferline = false,
   },
   keybind = {
     mode = { 'n', 'v' },
@@ -107,6 +106,8 @@ Config = {
     { "Qa", ":qa<cr>", desc = "󱂬 Quit all" },
     { "Qf", ":q!<cr>", desc = " Quit without saving" },
     { "Qw", ":wq<cr>", desc = " Write and Quit" },
+    { "<leader>]", ":bn<cr>", desc = "Next buffer" },
+    { "<leader>[", ":bp<cr>", desc = "Prev Buffer" },
   },
   signs = {
     Error = '',
