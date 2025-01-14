@@ -18,7 +18,7 @@ return {
       sections = {
         -- left
         lualine_a = { 'mode' },
-        lualine_b = {
+        lualine_b = Config.ui.showBufferline and { 'diff' } or {
           {
             'filename',
             file_status = true,
@@ -27,9 +27,10 @@ return {
             shorting_target = 40,
           },
         },
-        lualine_c = { 'diff' },
+        lualine_c = Config.ui.showBufferline and {} or { 'diff' },
         -- right
         lualine_x = {
+          -- 'diff',
           {
             'diagnostics',
             symbols = {

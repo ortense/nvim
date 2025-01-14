@@ -32,7 +32,9 @@ return {
     "echasnovski/mini.animate",
     version = "*",
     config = function()
-      require("mini.animate").setup()
+      if Config.ui.animateScroll then
+        require("mini.animate").setup()
+      end
     end
   },
 }

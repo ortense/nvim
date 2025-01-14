@@ -2,9 +2,10 @@ Config = {
   ui = {
     --themes: default, catppuccin-mocha, catppuccin-macchiato, catppuccin-frappe, catppuccin-latte, dracula, dracula-soft, nord
     theme = "rose-pine-moon",
-    border = "rounded", -- single, rounded, double
+    border = "single", -- single, rounded, double
     currentLineBlame = true,
     showBufferline = false,
+    animateScroll = false,
   },
   keybind = {
     mode = { 'n', 'v' },
@@ -18,6 +19,7 @@ Config = {
     { "<leader>p", '"+p', desc = " Paste from system clipbboard" },
     { "<leader>r", vim.lsp.buf.rename, desc = "󰤀 Rename symbol" },
     { "<leader>s", ":w<cr>", desc = " Save" },
+    { "<leader>q", ":q<cr>", desc = "󰩈 Quit" },
     { "J", "ddp", desc = " Move line down", remap = false },
     { "K", "ddkP", desc = " Move line up", remap = false },
     { "H", "^", desc = " Goto first non-blank in line", remap = false },
