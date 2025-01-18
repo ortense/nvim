@@ -23,49 +23,9 @@ vim.api.nvim_create_user_command(
 )
 
 vim.api.nvim_create_user_command(
-  'X',
-  function()
-    vim.cmd('wq')
-  end,
-  {}
-)
-
-vim.api.nvim_create_user_command(
   'ConfigOpen',
   function()
     vim.cmd('edit ~/.config/nvim/lua/config.lua')
   end,
   {}
-)
-
-vim.api.nvim_create_user_command(
-  'Theme',
-  function(args)
-    vim.cmd.colorscheme(args.args)
-  end,
-  {
-    nargs = 1,
-    complete = function(arglead)
-      return vim.tbl_filter(function(val)
-        return vim.startswith(val, arglead)
-      end, {
-        'catppuccin-frappe',
-        'catppuccin-latte',
-        'catppuccin-macchiato',
-        'catppuccin-mocha',
-        'dracula',
-        'dracula-soft',
-        'kanagawa',
-        'rose-pine-main',
-        'rose-pine-moon',
-        'rose-pine-dawn',
-        'tokyonight',
-        'tokyonight-storm',
-        'tokyonight-moon',
-        'tokyonight-day',
-        'nord',
-        'default',
-      })
-    end
-  }
 )
