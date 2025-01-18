@@ -10,7 +10,37 @@ return {
     "echasnovski/mini.move",
     version = "*",
     config = function()
-      require("mini.move").setup()
+      require("mini.move").setup({
+        mappings = {
+          -- Visual mode
+          left = 'H',
+          right = 'L',
+          down = 'J',
+          up = 'K',
+          -- Normal mode
+          line_left = 'H',
+          line_right = 'L',
+          line_down = 'J',
+          line_up = 'K',
+        },
+        options = {
+          reindent_linewise = true,
+        },
+      })
+    end,
+  },
+  {
+    "echasnovski/mini.cursorword",
+    version = "*",
+    config = function()
+      require("mini.cursorword").setup()
+    end,
+  },
+  {
+    "echasnovski/mini.bracketed",
+    version = "*",
+    config = function()
+      require("mini.bracketed").setup()
     end,
   },
   {

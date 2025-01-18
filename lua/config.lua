@@ -1,7 +1,7 @@
 Config = {
   ui = {
     --themes: default, catppuccin-mocha, catppuccin-macchiato, catppuccin-frappe, catppuccin-latte, dracula, dracula-soft, nord
-    theme = "rose-pine-moon",
+    theme = "tokyonight",
     border = "single", -- single, rounded, double
     currentLineBlame = true,
     showBufferline = false,
@@ -19,12 +19,9 @@ Config = {
     { "<leader>p", '"+p', desc = " Paste from system clipbboard" },
     { "<leader>r", vim.lsp.buf.rename, desc = "󰤀 Rename symbol" },
     { "<leader>s", ":w<cr>", desc = " Save" },
-    { "<leader>q", ":q<cr>", desc = "󰩈 Quit" },
-    { "J", "ddp", desc = " Move line down", remap = false },
-    { "K", "ddkP", desc = " Move line up", remap = false },
-    { "H", "^", desc = " Goto first non-blank in line", remap = false },
-    { "L", "g_", desc = " Goto last non-blank in line", remap = false },
     { "<leader>G", group = " Git" },
+    { "<leader>q", ":q<cr>", desc = "󰩈 Quit" },
+    { "<leader>t", "<cmd>Telescope colorscheme<cr>", desc = " Themes" },
     { "<leader>GD", "<cmd>DiffviewClose<cr>", desc = " Diff view Close" },
     { "<leader>GG", "<cmd>Neogit<cr>", desc = "󰕴 Integrated Git UI" },
     { "<leader>GN", "<cmd>Gitsigns prev_hunk<cr>", desc = " Previous Hunk" },
