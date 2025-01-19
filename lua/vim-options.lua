@@ -2,6 +2,7 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 vim.wo.linebreak = false
+vim.wo.relativenumber = Config.ui.relative_line_number
 vim.o.wrap = false
 vim.o.sidescroll = 1
 vim.o.sidescrolloff = 15

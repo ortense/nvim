@@ -6,6 +6,7 @@ Config = {
     currentLineBlame = true,
     showBufferline = false,
     animateScroll = false,
+    relative_line_number = false,
   },
   keybind = {
     mode = { 'n', 'v' },
