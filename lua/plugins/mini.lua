@@ -26,7 +26,7 @@ return {
   mini("pairs"),
   mini("surround"),
   mini("animate", function()
-    if Config.ui.animateScroll then
+    if Config.ui.animate_scroll then
       require("mini.animate").setup()
     end
   end),
