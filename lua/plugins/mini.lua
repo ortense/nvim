@@ -20,7 +20,6 @@ end
 
 return {
   mini("ai"),
-  mini("bracketed"),
   mini("cursorword"),
   mini("indentscope"),
   mini("pairs"),
