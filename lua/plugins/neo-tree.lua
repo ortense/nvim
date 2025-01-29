@@ -12,6 +12,16 @@ return {
       enable_git_status = true,
       enable_diagnostics = true,
       window = { position = 'float' },
+      default_component_configs = {
+        diagnostics = {
+          symbols = {
+            hint = Config.signs.Hint,
+            info = Config.signs.Information,
+            warn = Config.signs.Warn,
+            error = Config.signs.Error,
+          },
+        },
+      },
     })
   end,
 }
