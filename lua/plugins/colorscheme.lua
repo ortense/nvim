@@ -15,4 +15,10 @@ return {
     priority = 1000,
     config = set_color,
   },
+  {
+    'olivercederborg/poimandres.nvim',
+    lazy = false,
+    priority = 1000,
+    config = set_color,
+  },
 }

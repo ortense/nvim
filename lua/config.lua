@@ -1,7 +1,7 @@
 Config = {
   ui = {
     --themes: default, catppuccin-mocha, catppuccin-macchiato, catppuccin-frappe, catppuccin-latte, dracula, dracula-soft, nord
-    theme = "tokyonight",
+    theme = "poimandres",
     border = "single", -- single, rounded, double
     current_line_blame = true,
     show_bufferline = false,
