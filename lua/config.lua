@@ -133,6 +133,7 @@ Config = {
     'toml',
     'markdown',
     'kdl',
+    'rust',
   },
   lsp = {
     'lua_ls',
@@ -143,6 +144,7 @@ Config = {
     'intelephense',
     'jsonls',
     'jqls',
+    'rust_analyzer',
     biome = {
       root_dir = Utils.root_pattern("biome.json", "biome.jsonc"),
     },
