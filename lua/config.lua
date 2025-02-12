@@ -1,12 +1,13 @@
 Config = {
   ui = {
     --themes: default, catppuccin-mocha, catppuccin-macchiato, catppuccin-frappe, catppuccin-latte, dracula, dracula-soft, nord
-    theme = "poimandres",
+    theme = "dracula",
     border = "single", -- single, rounded, double
     current_line_blame = true,
     show_bufferline = false,
     animate_scroll = false,
     relative_line_number = false,
+    noice_ui = false,
   },
   keybind = {
     mode = { 'n', 'v' },
