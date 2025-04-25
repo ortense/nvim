@@ -1,15 +1,17 @@
+local ui = require("config.ui")
+local keymap = require("config.keymap")
+
 return {
-  'folke/which-key.nvim',
-  event = 'VeryLazy',
+  "folke/which-key.nvim",
+  event = "VeryLazy",
   config = function()
     local wk = require("which-key")
+
     wk.setup({
-      preset = 'helix',
-      icons = { rules = false },
-      win = {
-        border = Config.ui.border,
-      }
+      preset = "modern",
+      win = { border = ui.border }
     })
-    wk.add(Config.keybind)
+
+    wk.add(keymap)
   end
 }

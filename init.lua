@@ -1,5 +1,2 @@
-require 'utils'
-require 'config'
-require 'commands'
-require 'vim-options'
-require 'lazy-nvim'
+require 'config.options'
+require 'config.lazy'

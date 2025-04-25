@@ -1,24 +1,20 @@
-local set_color = function()
-  vim.cmd.colorscheme(Config.ui.theme)
-end
+local ui = require("config.ui")
 
 return {
-  { 'catppuccin/nvim',       config = set_color },
-  { 'Mofiqul/dracula.nvim',  config = set_color },
-  { 'rebelot/kanagawa.nvim', config = set_color },
-  { 'shaunsingh/nord.nvim',  config = set_color },
-  { 'shaunsingh/nord.nvim',  config = set_color },
-  { "rose-pine/neovim",      config = set_color, name = "rose-pine" },
-  {
-    'folke/tokyonight.nvim',
-    lazy = false,
-    priority = 1000,
-    config = set_color,
+  name = "colorscheme",
+  dir = ".",
+  lazy = false,
+  priority = 1000,
+  dependencies = {
+    { "Zeioth/neon.nvim" },
+    { "catppuccin/nvim" },
+    { "Mofiqul/dracula.nvim" },
+    { "shaunsingh/nord.nvim" },
+    { "folke/tokyonight.nvim" },
+    { "rose-pine/neovim",     name = "rose-pine" },
+    { "b0o/lavi.nvim",        dependencies = { 'rktjmp/lush.nvim' } },
   },
-  {
-    'olivercederborg/poimandres.nvim',
-    lazy = false,
-    priority = 1000,
-    config = set_color,
-  },
+  config = function()
+    vim.cmd.colorscheme(ui.colorscheme)
+  end
 }
